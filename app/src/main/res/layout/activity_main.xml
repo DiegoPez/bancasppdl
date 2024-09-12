@@ -11,36 +11,39 @@
         android:id="@+id/imageView"
         android:layout_width="485dp"
         android:layout_height="775dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842"
         app:srcCompat="@drawable/rectangle4"
-        tools:layout_editor_absoluteX="-18dp"
-        tools:layout_editor_absoluteY="257dp" />
+        tools:layout_editor_absoluteX="-18dp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="user@gmail.com"
+        android:layout_width="313dp"
+        android:layout_height="56dp"
+        android:background="@drawable/custom_input"
         android:drawableStart="@drawable/baseline_email_24"
         android:drawablePadding="12dp"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="user@gmail.com"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="password"
+        android:layout_width="313dp"
+        android:layout_height="56dp"
+        android:background="@drawable/custom_input"
         android:drawableStart="@drawable/baseline_lock_24"
         android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="password"
         android:inputType="textPassword"
-        android:background="@drawable/custom_input"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,13 +51,31 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="178dp"
         android:layout_height="77dp"
+        android:backgroundTint="#0179FE"
         android:text="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintVertical_bias="0.792" />
+
+
+    <Button
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="225dp"
+        android:layout_height="37dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00DC5151"
+        android:text="Crear nueva cuenta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
