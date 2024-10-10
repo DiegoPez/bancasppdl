@@ -15,5 +15,4 @@ public class SignupRequest {
         this.last_name = last_name;
     }
 
-    // Getters y setters
 }

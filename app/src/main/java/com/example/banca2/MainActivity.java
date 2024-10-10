@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Ajustar padding para el diseño principal
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -42,19 +41,15 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextTextPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        // Encontrar el botón por su ID y agregarle un OnClickListener
+        // Botón crear cuenta
         Button btnCrearCuenta = findViewById(R.id.btnCrearCuenta);
         btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar RegisterActivity cuando se presione el botón
                 Intent intent = new Intent(MainActivity.this, signin.class);
                 startActivity(intent);
             }
         });
-
-
-
 
         // Configurar acción del botón de login
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -94,14 +89,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    // Si el login es exitoso, obtener el token del campo "message"
-                    String token = response.body().getMessage();
-                    Toast.makeText(MainActivity.this, "Login exitoso, token: " + token, Toast.LENGTH_SHORT).show();
+                    // Si el login es exitoso, obtener el message del campo "message"
+                    String message = response.body().getMessage();
+                    Toast.makeText(MainActivity.this, "Login exitoso, message: " + message, Toast.LENGTH_SHORT).show();
 
-                    // Aquí puedes almacenar el token si lo necesitas, por ejemplo, en SharedPreferences
-
-                    // Iniciar la actividad Page1
+                    // Pasar el message (token) a la siguiente actividad
                     Intent intent = new Intent(MainActivity.this, Page1.class);
+                    intent.putExtra("message", message);  // Pasar el message a Page1
                     startActivity(intent);
 
                     // Finalizar la actividad de login para evitar volver a ella
@@ -111,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 // Manejar errores de red o de la API
@@ -120,47 +113,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-
-
-
-/** package com.example.banca2;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-
-        // Ajustar padding para el diseño principal
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        // Encontrar el botón por su ID y agregarle un OnClickListener
-        Button btnCrearCuenta = findViewById(R.id.btnCrearCuenta);
-        btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Iniciar RegisterActivity cuando se presione el botón
-                Intent intent = new Intent(MainActivity.this, registro.class);
-                startActivity(intent);
-            }
-        });
-    }
-}
-**/

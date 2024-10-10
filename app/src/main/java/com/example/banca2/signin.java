@@ -59,7 +59,7 @@ public class signin extends AppCompatActivity {
         ApiService apiService = retrofit.create(ApiService.class);
         SignupRequest signupRequest = new SignupRequest(username, password, email, first_name, last_name);
 
-        // Hacer la llamada a la API
+        // Llamada a la API
         Call<SignupResponse> call = apiService.registerUser(signupRequest);
         call.enqueue(new Callback<SignupResponse>() {
             @Override
@@ -68,12 +68,12 @@ public class signin extends AppCompatActivity {
                     SignupResponse signupResponse = response.body();
                     Toast.makeText(signin.this, "Registro exitoso: " + signupResponse.getMessage(), Toast.LENGTH_LONG).show();
 
-                    // Redirigir al login (MainActivity)
+                    // Redirigir al login
                     Intent intent = new Intent(signin.this, MainActivity.class);
                     startActivity(intent);
-                    finish();  // Finaliza la actividad actual para que el usuario no pueda volver al registro con el botón de atrás
+                    finish();
                 } else {
-                    // Obtener más detalles del error
+                    // Detalles del error
                     try {
                         String errorBody = response.errorBody().string();
                         Toast.makeText(signin.this, "Error en el registro: " + errorBody, Toast.LENGTH_LONG).show();
