@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RTransaction"
+            android:exported="false" />
+        <activity
+            android:name=".Movements"
+            android:exported="false" />
+        <activity
+            android:name=".Transaction"
+            android:exported="false" />
+        <activity
             android:name=".registerAccount"
             android:exported="false" />
         <activity

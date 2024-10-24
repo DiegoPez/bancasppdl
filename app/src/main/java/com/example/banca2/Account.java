@@ -1,26 +1,27 @@
 package com.example.banca2;
 
-import com.google.gson.annotations.SerializedName;
-
 public class Account {
-    @SerializedName("account_id") // Mapea al nombre del JSON
-    private int accountId;
+    private int account_id;
+    private String account_type;
+    private double balance;  // Cambia a double para poder manejar los decimales.
 
-    @SerializedName("account_type") // Mapea al nombre del JSON
-    private String accountType;
-
-    private double balance;
-
-    public Account(int accountId, String accountType) {
-        this.accountId = accountId;
-        this.accountType = accountType;
+    // Constructor
+    public Account(int account_id, String account_type, double balance) {
+        this.account_id = account_id;
+        this.account_type = account_type;
+        this.balance = balance;
     }
 
+    // Getters
     public int getAccountId() {
-        return accountId;
+        return account_id;
     }
 
     public String getAccountType() {
-        return accountType;
+        return account_type;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }

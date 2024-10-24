@@ -22,7 +22,12 @@ public interface ApiService {
     @POST("/accounts/create")
     Call<CreateAccountResponse> createAccount(@Header("Authorization") String token, @Body CreateAccountRequest createAccountRequest);
 
+    @GET("/updateusers/user")
+    Call<UserResponse> getUserInfo(@Header("Authorization") String token);
 
+    // Nuevo método para realizar transferencias
+    @POST("/movements/transfers")
+    Call<TransferResponse> makeTransfer(@Header("Authorization") String token, @Body TransferRequest transferRequest);
 
 }
 

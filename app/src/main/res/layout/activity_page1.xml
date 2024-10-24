@@ -36,7 +36,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DJ"
+        android:text="D"
         android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
@@ -44,11 +44,13 @@
         app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <!-- RecyclerView fuera del ScrollView -->
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="273dp"
         android:layout_height="59dp"
-        android:text="Diego J Pescador"
+        android:text="Diego Pescador"
+        android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
