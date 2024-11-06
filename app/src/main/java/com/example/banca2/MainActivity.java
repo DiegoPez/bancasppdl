@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private void login(String username, String password) {
         // Crear una instancia de Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://18.190.3.213:3000/")  // Base URL de tu API
+                .baseUrl("http://3.140.201.89:3000/")  // Base URL de tu API
                 .addConverterFactory(GsonConverterFactory.create()) // Convertir JSON a objetos Java
                 .build();
 

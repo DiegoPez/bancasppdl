@@ -135,13 +135,11 @@
         android:ems="10"
         android:hint="description"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
     <Button
         android:id="@+id/button3"
