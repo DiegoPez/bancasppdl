@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Banca2</string>
+
+    <string-array name="transaction_types">
+        <item>deposit</item>
+        <item>withdrawal</item>
+    </string-array>
+</resources>
